@@ -1,0 +1,57 @@
+﻿<Window x:Class="projet_location_DVD.Gestion_des_retours"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projet_location_DVD"
+        mc:Ignorable="d"
+        Title="Gestion_des_retours" Height="450" Width="800">
+    <Grid Background="#FF8C959B">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="100" ></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Menu" Grid.Row="0" Background="#FF1C548B" TextAlignment="Center" FontSize="24" FontFamily="Britannic Bold" FontWeight="Bold" Foreground="White" Height="70" VerticalAlignment="Top" ><Run Language="fr-fr" Text="Gestion des Retours"/></TextBlock>
+        <TextBlock x:Name="dev" Grid.Row="3" Text="TRAORE" Background="#FF1C548B" FontSize="15"  TextAlignment="Center" FontFamily="Britannic Bold" FontWeight="Bold" Foreground="White" FontStretch="Medium" Margin="0,78,0,0"/>
+
+
+
+
+
+
+
+        <Button x:Name="AddButton" Grid.Row="1" Margin="0,0,540,0" Content="Enregidtrez un retours" Click="add_click" Height="50" Width="250"  Background="Teal" FontFamily="Britannic Bold" Foreground="#FFEFEFEF" FontSize="18" RenderTransformOrigin="0.49,-0.476"/>
+        <Button x:Name="Delete" Grid.Row="1" Margin="0,0,0,0" Content="Supprimé un retours" Click="supp_click" Height="50" Width="250"  Background="Teal" FontFamily="Britannic Bold" Foreground="#FFEFEFEF" FontSize="18"/>
+        <Button x:Name="calcule" Grid.Row="1" Margin="540,0,0,0"  Click="calc_click" Content="Calculez les frais de  retoures"  Height="50" Width="250"  Background="Teal" FontFamily="Britannic Bold" Foreground="#FFEFEFEF" FontSize="18" BorderBrush="Black"/>
+        <Button x:Name="Actualise" Grid.Row="3" Margin="500,0,0,0" Content="Actualisez la page" Click="RefreshButton_Click" Height="50" Width="250"  Background="Teal" FontFamily="Britannic Bold" Foreground="#FFEFEFEF" FontSize="18" BorderBrush="Black"/>
+        <Button x:Name="Afficher" Grid.Row="3" Margin="0,0,500,0" Content="Retours au menu"  Height="50" Width="250"   Background="Black" FontFamily="Britannic Bold" Foreground="#FFEFEFEF" FontSize="18" Click="Retours_click"/>
+
+      
+
+
+      
+
+        <ListView x:Name="DVDListView" Grid.Row="2"  ItemsSource="{Binding DVDList}" MouseDoubleClick="DVDListView_MouseDoubleClick">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="ID de Retour"  DisplayMemberBinding="{Binding Path=RetourId}" Width="120"/>
+                    <GridViewColumn Header="ID Location" DisplayMemberBinding="{Binding Path=LaLocation}" Width="120"/>
+                    <GridViewColumn Header="Date de Retour" DisplayMemberBinding="{Binding Path=DateReturned}"  Width="200"/>
+                </GridView>
+            </ListView.View>
+
+        </ListView>
+
+
+
+
+
+
+
+    </Grid>
+</Window>

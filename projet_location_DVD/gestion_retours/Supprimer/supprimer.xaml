@@ -1,0 +1,38 @@
+﻿<Window x:Class="projet_location_DVD.gestion_retours.Supprimer.supprimer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projet_location_DVD.gestion_retours.Supprimer"
+        mc:Ignorable="d"
+         Title="Supprimer" Height="450" Width="800">
+
+    <Grid Background="#F5F5F5">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Label Content="Selectioonez les éléments a supprimée " HorizontalAlignment="Center" FontSize="18" FontWeight="Bold" Foreground="DodgerBlue"></Label>
+
+        <DataGrid x:Name="RetoursDataGrid" Grid.Row="1" Margin="10"
+                  AutoGenerateColumns="False"
+                  SelectionMode="Extended"
+                  ItemsSource="{Binding Retours}"
+                  IsReadOnly="True"
+                  RowBackground="#F5F5F5"
+                  AlternatingRowBackground="#FFFFFF"
+                  GridLinesVisibility="None">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn Header="Sélection" Binding="{Binding EstSelectionne}" Width="80"/>
+                <DataGridTextColumn Header="RetourId" Binding="{Binding RetourId}" Width="Auto"/>
+                <DataGridTextColumn Header="Location" Binding="{Binding LaLocation}" Width="Auto"/>
+                <DataGridTextColumn Header="Date de retour" Binding="{Binding DateReturned}" Width="200"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="10">
+            <Button Content="Supprimer sélection" Margin="5" Padding="10,5" Background="green" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand" Click="SupprimerSelectionButton_Click"/>
+            <Button Content="Annuler" Click="AnnulerButton_Click" Margin="5" Padding="10,5" Background="red" Foreground="White" FontWeight="Bold" BorderThickness="0" Cursor="Hand" />
+        </StackPanel>
+    </Grid>
+</Window>

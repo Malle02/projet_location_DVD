@@ -1,0 +1,46 @@
+﻿<Window x:Class="projet_location_DVD.Gestion_de_DVD"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:projet_location_DVD"
+        mc:Ignorable="d"
+        Title="Gestion_de_DVD" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition Height="20"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="Menu" Background="#FF1C548B" TextAlignment="Center" FontSize="24" FontFamily="Britannic Bold" FontWeight="Bold" Foreground="White" Height="70" VerticalAlignment="Center" ><Run Language="fr-fr" Text="Gestion des DVD"/></TextBlock>
+        <TextBlock x:Name="dev" Grid.Row="2" Text="TRAORE" Background="#FF1C548B" FontSize="15"  TextAlignment="Center" FontFamily="Britannic Bold" FontWeight="Bold" Foreground="White" FontStretch="Medium"/>
+
+
+
+        <StackPanel Orientation="Horizontal" Margin="5" Grid.Row="1">
+            <Button x:Name="Afficher" Content="Affichez"  Height="50" Width="170" Margin="20,0,0,260" Background="Teal" FontFamily="Britannic Bold" Foreground="#FFEFEFEF" FontSize="18"/>
+            <Button Name="AddButton" Content="Ajouter un DVD"  Height="50" Width="170" Margin="20,0,40,260" Background="Teal" FontFamily="Britannic Bold" Foreground="#FFEFEFEF" FontSize="18"/>
+            <Button Name="EditButton" Content="Modifier un DVD"  Height="50" Width="170" Margin="-20,0,40,260" Background="Teal" FontFamily="Britannic Bold" Foreground="#FFEFEFEF" FontSize="18"/>
+            <Button x:Name="DeleteButton" Content="supprimer un DVD"  Height="50" Width="170" Margin="-20,0,40,260" Background="Teal" FontFamily="Britannic Bold" Foreground="#FFEFEFEF" FontSize="18"/>
+        </StackPanel>
+
+        <DataGrid Grid.Row="1" Name="ClientDataGrid" AutoGenerateColumns="False" Margin="5,81,5,5">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Titre" Binding="{Binding Name}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Style" Binding="{Binding style}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="Date de realisation" Binding="{Binding Date}" IsReadOnly="True"/>
+                <DataGridTextColumn Header="disponibilité" Binding="{Binding Disponiblite}" IsReadOnly="True"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+
+
+
+
+
+    </Grid>
+</Window>
